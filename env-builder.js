@@ -927,15 +927,6 @@ const FIELDS = [
   {
     "g": "Provider Keys",
     "icon": "🔑",
-    "k": "GOOGLE_API_KEY",
-    "lbl": "Google AI Studio",
-    "type": "password",
-    "secret": 1,
-    "common": 0
-  },
-  {
-    "g": "Provider Keys",
-    "icon": "🔑",
     "k": "GEMINI_API_KEY",
     "lbl": "Google Gemini",
     "type": "password",
@@ -1168,15 +1159,6 @@ const FIELDS = [
     "common": 0
   },
   {
-    "g": "Provider Keys",
-    "icon": "🔑",
-    "k": "CLOUDFLARE_API_TOKEN",
-    "lbl": "Cloudflare API token",
-    "type": "password",
-    "secret": 1,
-    "common": 0
-  },
-  {
     "g": "Rotation Pools",
     "icon": "🔄",
     "k": "ANTHROPIC_API_KEYS",
@@ -1195,13 +1177,6 @@ const FIELDS = [
     "icon": "🔄",
     "k": "GEMINI_API_KEYS",
     "lbl": "Gemini pool",
-    "type": "text"
-  },
-  {
-    "g": "Rotation Pools",
-    "icon": "🔄",
-    "k": "GOOGLE_API_KEYS",
-    "lbl": "Google pool",
     "type": "text"
   },
   {
@@ -1649,14 +1624,6 @@ const FIELDS = [
     "lbl": "Public app base path",
     "type": "text",
     "ph": "/app"
-  },
-  {
-    "g": "Deployment",
-    "icon": "🧭",
-    "k": "BACKUP_DATASET",
-    "lbl": "Backup dataset alias",
-    "type": "text",
-    "ph": "huggingclaw-backup"
   },
   {
     "g": "Deployment",
