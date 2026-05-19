@@ -323,7 +323,7 @@ CONFIG_JSON=$(cat <<'CONFIGEOF'
 {
   "gateway": {
     "mode": "local",
-    "port": 7860,
+    "port": "${GATEWAY_PORT}",
     "bind": "lan",
     "auth": {
       "token": ""
@@ -1653,7 +1653,7 @@ while true; do
   stdbuf -oL -eL openclaw "${GATEWAY_ARGS[@]}" 2>&1 | tee -a /home/node/.openclaw/gateway.log &
   GATEWAY_PID=$!
 
-  # Poll for the gateway to start listening on 7860. OpenClaw can take 20-30s
+  # Poll for the gateway to start listening on ${GATEWAY_PORT}. OpenClaw can take 20-30s
   # on cold start (plugin install + auto-restore). Bail out early if the
   # pipeline died.
   GATEWAY_READY_TIMEOUT="${GATEWAY_READY_TIMEOUT:-90}"
