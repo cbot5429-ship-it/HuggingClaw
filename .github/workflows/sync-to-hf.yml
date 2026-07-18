@@ -1,0 +1,25 @@
+name: Sync to Hugging Face Space
+
+on:
+  push:
+    branches: [main] # Triggers on every push to 'main'
+  workflow_dispatch:   # Allows manual trigger from the Actions tab
+
+jobs:
+  sync-to-hub:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Fetch all history for Git LFS
+          lfs: true      # Enable Git LFS support
+
+      - name: Push to Hugging Face Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_USERNAME: ${{ secrets.HF_USERNAME }} # Or hardcode your username
+          SPACE_NAME: ${{ secrets.SPACE_NAME }}   # Or hardcode your Space name
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git push -f https://$HF_USERNAME:$HF_TOKEN@huggingface.co/spaces/$HF_USERNAME/$SPACE_NAME main   
